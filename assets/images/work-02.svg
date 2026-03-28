@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f7f1e9"/>
+      <stop offset="1" stop-color="#e2cfb5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g2)"/>
+  <rect x="90" y="120" width="150" height="110" fill="#d8e9f2" stroke="#fff" stroke-width="10"/>
+  <rect x="280" y="320" width="250" height="95" rx="18" fill="#d5c1a9"/>
+  <rect x="120" y="430" width="520" height="34" rx="10" fill="#b39163"/>
+  <text x="50%" y="540" text-anchor="middle" font-size="30" fill="#6c563d" font-family="Arial, sans-serif">施工写真をここに差し替え</text>
+</svg>
