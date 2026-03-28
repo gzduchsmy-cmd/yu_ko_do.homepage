@@ -99,6 +99,23 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 0.08em;
 }
+
+/* 追加: トップメイン画像 */
+.hero-main-image {
+  margin: 0 0 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(34, 29, 24, 0.14);
+  border: 1px solid rgba(34, 29, 24, 0.08);
+}
+
+.hero-main-image img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
 .hero h1 {
   margin: 0 0 18px;
   line-height: 1.15;
@@ -321,4 +338,8 @@ img { max-width: 100%; display: block; }
   .two-col { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }
   .btn { width: 100%; }
+
+  .hero-main-image img {
+    height: 220px;
+  }
 }
