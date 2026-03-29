@@ -45,7 +45,7 @@ img { max-width: 100%; display: block; }
 }
 .brand { display: flex; align-items: center; }
 .brand-logo {
-  height: 80px;
+  height: 120px;
   width: auto;
   display: block;
 }
@@ -317,7 +317,7 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr;
   }
 
-  .brand-logo { height: 60px; }
+  .brand-logo { height: 80px; }
 
   .site-nav {
     position: absolute;
