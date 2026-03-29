@@ -43,9 +43,13 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: 20px;
 }
-.brand { display: flex; flex-direction: column; gap: 2px; }
-.brand-label { font-size: 11px; letter-spacing: 0.18em; color: var(--accent); font-weight: 700; }
-.brand-name { font-size: 23px; font-weight: 700; }
+.brand { display: flex; align-items: center; }
+.brand-logo {
+  height: 46px;
+  width: auto;
+  display: block;
+}
+
 .site-nav { display: flex; gap: 24px; align-items: center; }
 .site-nav a { color: var(--sub); font-size: 14px; font-weight: 500; }
 .site-nav a:hover { color: var(--accent-dark); }
@@ -312,6 +316,8 @@ img { max-width: 100%; display: block; }
   .footer-grid {
     grid-template-columns: 1fr;
   }
+
+  .brand-logo { height: 38px; }
 
   .site-nav {
     position: absolute;
