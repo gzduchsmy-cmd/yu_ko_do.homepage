@@ -6,7 +6,7 @@
 // GAS Web App をデプロイした後、ここに URL を貼り付けてください。
 // 例: 'https://script.google.com/macros/s/AKfy.../exec'
 // 空文字のままだと事例セクションは「準備中」表示になります。
-const WORKS_API_URL = '';
+const WORKS_API_URL = 'https://script.google.com/macros/s/AKfycbxApwCl_W2I178Yrxw4GaJttOUZQYf6dU3X6PGefP392DxyHQjo5KMV6ViUnpImvM_Y/exec';
 
 // ---- ヘッダーメニュー -----------------------------------------
 const menuButton = document.getElementById('menuButton');
