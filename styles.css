@@ -28,6 +28,11 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
 
+.highlight {
+  color: #8d5820;
+  box-shadow: inset 0 -3px 0 rgba(187, 122, 52, 0.45);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -104,7 +109,6 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.08em;
 }
 
-/* 追加: トップメイン画像 */
 .hero-main-image {
   margin: 0 0 24px;
   border-radius: 20px;
@@ -128,23 +132,7 @@ img { max-width: 100%; display: block; }
 }
 .hero-text { margin: 0; color: var(--sub); font-size: 15px; }
 .hero-actions { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-points {
-  margin: 26px 0 0;
-  padding: 0;
-  list-style: none;
-  color: var(--sub);
-}
-.hero-points li { position: relative; padding-left: 22px; margin-bottom: 8px; }
-.hero-points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 11px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-}
+
 .hero-panel { border-radius: var(--radius-xl); padding: 22px; }
 .hero-card {
   height: 100%;
@@ -175,6 +163,52 @@ img { max-width: 100%; display: block; }
 .summary-list dt { font-weight: 700; margin-bottom: 4px; }
 .summary-list dd { margin: 0; color: var(--sub); }
 
+/* ====== 3つの約束（PROMISE） ====== */
+.promise-section {
+  padding: 28px 0 56px;
+}
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.promise-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.promise-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+.promise-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+.promise-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.promise-card p {
+  margin: 0;
+  color: var(--sub);
+  font-size: 15px;
+}
+
 .section { padding: 36px 0; }
 .soft-bg { background: linear-gradient(180deg, rgba(239,232,223,0.72), rgba(247,243,237,0.3)); }
 .split-card {
@@ -200,18 +234,312 @@ img { max-width: 100%; display: block; }
 .company-list dd { margin: 0; color: var(--sub); }
 .note, .section-text, .form-note { color: var(--sub); font-size: 14px; }
 .section-head { margin-bottom: 18px; }
-.card-grid, .works-grid, .flow-grid { display: grid; gap: 18px; }
-.services-grid { grid-template-columns: repeat(3, 1fr); }
-.info-card, .work-card, .flow-card, .contact-info, .contact-form-wrap, .privacy-box {
+
+/* ====== 年表 ====== */
+.timeline {
+  margin-top: 28px;
+  padding: 22px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+.timeline-title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: var(--accent-dark);
+  letter-spacing: 0.04em;
+}
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), rgba(187,122,52,0.2));
+}
+.timeline-list li {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 18px;
+  padding: 12px 0;
+  position: relative;
+}
+.timeline-list li::after {
+  content: "";
+  position: absolute;
+  left: 54px;
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent);
+}
+.timeline-year {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  color: var(--accent-dark);
+  font-size: 15px;
+  padding-top: 4px;
+}
+.timeline-body strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.timeline-body p {
+  margin: 0;
+  color: var(--sub);
+  font-size: 14px;
+}
+
+.card-grid, .flow-grid { display: grid; gap: 18px; }
+.services-grid { grid-template-columns: repeat(3, 1fr); display: grid; gap: 18px; }
+.info-card, .flow-card, .contact-info, .contact-form-wrap, .privacy-box {
   border-radius: var(--radius-lg);
   padding: 24px;
 }
-.info-card h3, .work-body h3, .flow-card h3, .contact-list h3 { margin-top: 0; margin-bottom: 10px; }
+.info-card h3, .flow-card h3, .contact-list h3 { margin-top: 0; margin-bottom: 10px; }
 .info-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--sub); }
-.works-grid { grid-template-columns: repeat(3, 1fr); }
-.work-card { overflow: hidden; padding: 0; }
-.work-image { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 1px solid var(--line); }
-.work-body { padding: 18px; }
+
+/* ====== 私たちについて（PEOPLE） ====== */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.person-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.person-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.person-card:hover .person-photo img {
+  transform: scale(1.04);
+}
+.person-body {
+  padding: 22px;
+}
+.person-role {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+}
+.person-name {
+  margin: 0 0 12px;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.person-message {
+  margin: 0;
+  color: var(--sub);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.working-shots {
+  margin-top: 40px;
+  padding: 28px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+.working-shots-title {
+  margin: 0 0 18px;
+  font-size: 18px;
+  color: var(--accent-dark);
+  letter-spacing: 0.04em;
+}
+.working-shots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.working-shot {
+  margin: 0;
+}
+.working-shot img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+}
+.working-shot figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--sub);
+  text-align: center;
+}
+
+/* ====== 施工事例（WORKS） - ビフォーアフター ====== */
+.works-list {
+  display: grid;
+  gap: 28px;
+}
+.works-loading, .works-note {
+  text-align: center;
+  color: var(--sub);
+  padding: 40px 0;
+}
+.work-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.ba-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  user-select: none;
+  cursor: ew-resize;
+  background: #000;
+}
+.ba-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: block;
+}
+.ba-img-after {
+  /* 右側に「After」を表示。clip-path で描画範囲を制御 */
+  clip-path: inset(0 0 0 50%);
+  transition: clip-path 0.05s linear;
+}
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.3);
+}
+.ba-handle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+.ba-handle::after {
+  content: "‹ ›";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  letter-spacing: -2px;
+  z-index: 1;
+}
+.ba-label {
+  position: absolute;
+  top: 14px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  border-radius: 999px;
+  pointer-events: none;
+}
+.ba-label-before { left: 14px; }
+.ba-label-after { right: 14px; }
+
+.work-body {
+  padding: 24px;
+}
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.work-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  font-weight: 600;
+}
+.work-body h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.4;
+}
+.work-description {
+  margin: 0 0 14px;
+  color: var(--sub);
+  font-size: 15px;
+}
+.work-details {
+  margin: 0;
+  padding: 14px 16px;
+  background: rgba(247, 243, 237, 0.6);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 6px;
+}
+.work-details div {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+.work-details dt {
+  font-weight: 700;
+  min-width: 80px;
+  color: var(--text);
+}
+.work-details dd {
+  margin: 0;
+  color: var(--sub);
+}
+
 .flow-grid { grid-template-columns: repeat(4, 1fr); }
 .flow-card span {
   display: inline-flex;
@@ -312,7 +640,9 @@ img { max-width: 100%; display: block; }
   .split-card,
   .contact-grid,
   .services-grid,
-  .works-grid,
+  .promise-grid,
+  .people-grid,
+  .working-shots-grid,
   .flow-grid,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -339,7 +669,10 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 640px) {
-  .hero-copy, .hero-panel, .split-card, .info-card, .work-body, .flow-card, .contact-info, .contact-form-wrap, .privacy-box {
+  .hero-copy, .hero-panel, .split-card, .info-card, .flow-card, .contact-info, .contact-form-wrap, .privacy-box {
+    padding: 18px;
+  }
+  .promise-card, .person-body, .work-body, .working-shots {
     padding: 18px;
   }
   .two-col { grid-template-columns: 1fr; }
@@ -348,5 +681,10 @@ img { max-width: 100%; display: block; }
 
   .hero-main-image img {
     height: 220px;
+  }
+
+  .ba-handle::before {
+    width: 36px;
+    height: 36px;
   }
 }
