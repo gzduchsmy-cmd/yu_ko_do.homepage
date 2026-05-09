@@ -360,7 +360,9 @@ img { max-width: 100%; display: block; }
   margin: 0;
   color: var(--sub);
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.9;
+  text-align: left;
+  word-break: normal;
 }
 
 .working-shots {
