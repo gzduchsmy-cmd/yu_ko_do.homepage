@@ -474,6 +474,32 @@
     <p class="copyright">© <span id="year"></span> 有限会社 祐晃堂. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+  // トップページを開いた時に、前回のスクロール位置や #people などのハッシュで
+  // 途中のセクションから表示されるのを防ぐ
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.addEventListener('load', () => {
+    const isPageReloadOrDirectOpen =
+      performance.getEntriesByType('navigation')[0]?.type !== 'navigate'
+      || document.referrer === ''
+      || new URL(document.referrer).pathname !== location.pathname;
+
+    if (isPageReloadOrDirectOpen) {
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'auto'
+      });
+    }
+  });
+</script>
+<script src="script.js"></script>
 </body>
 </html>
